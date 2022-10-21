@@ -1,0 +1,54 @@
+import sys,pygame
+from pygame.locals import*
+from random import randrange
+pygame.init()
+screen_size=400,600
+pygame.display.set_mode(screen_size)
+pygame.mouse.set_visible(0)
+1_image=pygame.image.load('')
+sprites=pygame.sprite.RenderUpdates()
+sprites.add(plane())
+screen=pygame.display.get_surface()
+bg=(255,255,255)
+screen.fill(bg)
+pygame.display.flip()
+clock=pygame.time.Clock()
+speed=100 
+class plane(pygame.sprite.Sprite):
+   def __init__(self):
+       pygame.sprite.Sprite.__init__(self)       
+       self.image=plane_image
+       self.rect=self.image.get_rect()     
+       self.rect.top=-self.rect.height
+       self.rect.centerx=
+randrange(screen_size[0]-self.rect.width)
++self.rect.width/2 
+def update(self):        
+       self.rect.top+=1
+       if self.rect.top>screen_size[1]:
+           self.kill()
+def clear_callback(surf,rect): 
+       surf.fill(bg,rect)
+       while True:
+   for eventinpygame.event.get()
+       if event.type==QUIT:
+       sys.exit()
+       if event.type==KEYDOWNand
+event.key==K_ESCAPE:
+sys.exit() 
+ sprites.clear(screen,clear_callback)
+   sprites.update()   
+   def clear_callback(surf,rect):
+   surf.fill(bg,rect)
+   while True:
+   for eventinpygame.event.get()
+       if event.type==QUIT:   
+           sys.exit()
+       if event.type==KEYDOWNand
+       event.key==K_ESCAPE:
+       sys.exit()
+   sprites.clear(screen,clear_callback)
+   sprites.update()
+   updates=sprites.draw(screen)
+   pygame.display.update(updates)
+   clock.tick(speed)        
