@@ -2,12 +2,10 @@ import pygame
 import sys
 from pygame.locals import *
 
-pygame.init() # initialize pygame
+pygame.init() 
 clock = pygame.time.Clock()
 screen = pygame.display.set_mode((600,500))
 
-# os.path.join properly forms a cross-platform relative path
-# by joining directory names
 
 bg = pygame.image.load(os.path.join("images", "space.png"))
 
@@ -25,7 +23,6 @@ shoot_y = 0
 
 pygame.display.set_caption('galaxy invaders')
 
-# fix indentation
 
 while True:
     clock.tick(60)
